@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: yes
+  become_user: "{{ service_user | d('root') }}"
+  tasks:
+    - import_role:
+        name: install-ansible
